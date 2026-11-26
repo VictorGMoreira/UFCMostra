@@ -1,3 +1,5 @@
+package ufconecta.modelo;
+
 import java.util.ArrayList;
 import java.util.List;
 

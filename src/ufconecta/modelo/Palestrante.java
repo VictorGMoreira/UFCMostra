@@ -1,3 +1,5 @@
+package ufconecta.modelo;
+
 import java.util.Objects;
 
 public class Palestrante {
