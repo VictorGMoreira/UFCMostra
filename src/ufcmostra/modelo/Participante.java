@@ -1,4 +1,4 @@
-package ufconecta.modelo;
+package ufcmostra.modelo;
 
 public class Participante {
 }

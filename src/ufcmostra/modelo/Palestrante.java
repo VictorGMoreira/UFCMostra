@@ -1,4 +1,4 @@
-package ufconecta.modelo;
+package ufcmostra.modelo;
 
 import java.util.Objects;
 

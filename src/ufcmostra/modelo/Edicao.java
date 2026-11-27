@@ -1,4 +1,4 @@
-package ufconecta.modelo;
+package ufcmostra.modelo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -24,18 +24,22 @@ public class Edicao {
     }
 
     public void adicionarAtividade(Atividade atividade) {
-        if (atividade != null && !this.atividades.contains(atividade)) {
+        if (atividade != null && atividade.getEdicao() == null) {
             this.atividades.add(atividade);
+            atividade.vincularEdicao(this);
         }
     }
 
     public void removerAtividade(Atividade atividade) {
-        this.atividades.remove(atividade);
+        if (this.atividades.remove(atividade)) {
+            atividade.vincularEdicao(null);
+        }
     }
 
     public void adicionarTrabalho(Trabalho trabalho) {
-        if (trabalho != null && !this.trabalhos.contains(trabalho)) {
+        if (trabalho != null && trabalho.getEdicao() == null) {
             this.trabalhos.add(trabalho);
+            trabalho.vincularEdicao(this);
         }
     }
 
@@ -87,6 +91,7 @@ public class Edicao {
         return aprovados;
     }
 
+    // Os gets
     public int getId() {
         return id;
     }
